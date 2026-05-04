@@ -27,6 +27,23 @@ app.use(express.json());
 app.use(sanitizeInput);
 
 // Routes
+app.get("/", (req, res) => {
+  res.json({
+    message: "Matrix Library Management System API",
+    version: "1.0.0",
+    status: "✅ Running",
+    endpoints: {
+      auth: "/api/auth",
+      students: "/api/students",
+      books: "/api/books",
+      borrow: "/api/borrow-records",
+      digitalLibrary: "/api/digital-library",
+      notifications: "/api/notifications",
+      activityLogs: "/api/activity-logs"
+    }
+  });
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/students", studentRoutes);
 app.use("/api/activity-logs", activityLogRoutes);
