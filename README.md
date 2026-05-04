@@ -12,6 +12,7 @@ A full-stack web application for educational institution library management, fea
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![JWT](https://img.shields.io/badge/JWT-000000?style=flat&logo=json-web-tokens&logoColor=white)](https://jwt.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Live Preview](https://img.shields.io/badge/🌐_LIVE_PREVIEW-Visit_Website-brightgreen?style=flat)](https://matrix-library-management-system-j1.vercel.app/)
 
 </div>
 
