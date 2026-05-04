@@ -157,8 +157,9 @@ Ensure you have the following installed on your machine:
 
 - [Node.js](https://nodejs.org/) (v16 or higher recommended)
 - [npm](https://www.npmjs.com/) (comes with Node.js)
-- A database instance (see [Environment Variables](#environment-variables))
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account (for database)
 - A Google account (for Google Drive integration, optional)
+- Gmail app password (for Nodemailer email service, optional)
 
 ### Installation
 
@@ -194,23 +195,20 @@ PORT=5000
 NODE_ENV=development
 
 # Database
-DB_URI=your_database_connection_string
+MONGO_URI=your_mongodb_connection_string
 
 # Authentication
 JWT_SECRET=your_jwt_secret_key
-JWT_EXPIRES_IN=7d
 
 # Email (Nodemailer)
-EMAIL_HOST=smtp.your-email-provider.com
-EMAIL_PORT=587
-EMAIL_USER=your_email@example.com
-EMAIL_PASS=your_email_password
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASSWORD=your_app_password
 
 # Google Drive (optional)
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-GOOGLE_REDIRECT_URI=your_redirect_uri
-GOOGLE_REFRESH_TOKEN=your_refresh_token
+GOOGLE_APPLICATION_CREDENTIALS_BASE64=your_base64_encoded_credentials
+
+# Frontend
+FRONTEND_URL=http://localhost:3000
 ```
 
 #### Frontend (`MatrixFrontEndAlphaVersion/.env`)
@@ -219,6 +217,8 @@ Create a `.env` file in the frontend directory:
 
 ```env
 REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_WS_URL=http://localhost:5000
+REACT_APP_ENVIRONMENT=development
 ```
 
 ### Running the Application
@@ -246,6 +246,35 @@ npm start
 The frontend will be running at: `http://localhost:3000`
 
 > **Tip:** You can also use tools like [concurrently](https://www.npmjs.com/package/concurrently) to run both servers simultaneously.
+
+### Deployment (Render)
+
+For production deployment on Render:
+
+#### Backend Deployment
+1. Connect your GitHub repository to Render
+2. Set **Root Directory** to `MatrixBackendAlphaVersion`
+3. Set **Build Command** to `npm install`
+4. Set **Start Command** to `npm start`
+5. Add environment variables in Render dashboard:
+   - All variables from `.env` with `NODE_ENV=production`
+   - Update `FRONTEND_URL` to your frontend's Render URL
+
+#### Frontend Deployment
+1. Connect your GitHub repository to Render
+2. Set **Root Directory** to `MatrixFrontEndAlphaVersion`
+3. Set **Build Command** to `npm run build` or `npm install`
+4. Set **Start Command** to `npm start`
+5. Update `.env` with production URLs:
+   ```env
+   REACT_APP_API_URL=https://your-backend-url.onrender.com/api
+   REACT_APP_WS_URL=https://your-backend-url.onrender.com
+   REACT_APP_ENVIRONMENT=production
+   ```
+
+**Current Live URL:** https://matrix-library-management-system-de7y.onrender.com
+
+---
 
 ### Test Credentials
 
