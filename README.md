@@ -252,6 +252,7 @@ The frontend will be running at: `http://localhost:3000`
 For production deployment on Render:
 
 #### Backend Deployment
+
 1. Connect your GitHub repository to Render
 2. Set **Root Directory** to `MatrixBackendAlphaVersion`
 3. Set **Build Command** to `npm install`
@@ -261,6 +262,7 @@ For production deployment on Render:
    - Update `FRONTEND_URL` to your frontend's Render URL
 
 #### Frontend Deployment
+
 1. Connect your GitHub repository to Render
 2. Set **Root Directory** to `MatrixFrontEndAlphaVersion`
 3. Set **Build Command** to `npm run build` or `npm install`
