@@ -50,6 +50,38 @@ Key highlights:
 
 ---
 
+## 🚀 Live Preview
+
+<div align="center">
+
+### ✨ Try the Application Now
+
+[![Live Demo](https://img.shields.io/badge/🌐_LIVE_PREVIEW-matrix--library--management--system-blue?style=for-the-badge&logoColor=white)](https://matrix-library-management-system-j1.vercel.app/)
+
+**Frontend (Vercel):** https://matrix-library-management-system-j1.vercel.app/
+
+**Backend API (Render):** https://matrix-library-management-system-de7y.onrender.com/
+
+### 📝 Test Credentials
+
+#### Student Account
+
+```
+Email: student@university.in
+Password: student123
+```
+
+#### Admin Account
+
+```
+Email: admin@matrix.com
+Password: admin123
+```
+
+</div>
+
+---
+
 ## ✨ Features
 
 ### 👨‍🎓 Student Dashboard
