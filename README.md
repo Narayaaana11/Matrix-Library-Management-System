@@ -40,6 +40,7 @@ A full-stack web application for educational institution library management, fea
 **Matrix LMS** is a modern, responsive Library Management System designed for educational institutions. It provides a seamless experience for both students and administrators — from browsing and borrowing books to tracking activity logs, accessing digital resources, and monitoring real-time library analytics.
 
 Key highlights:
+
 - 🔐 **Dual-role authentication** — separate dashboards for Students and Admins
 - 📖 **Full book lifecycle management** — catalog, borrow, return, and track
 - 🌐 **Digital library** — integrated document access and downloads
@@ -52,29 +53,32 @@ Key highlights:
 ## ✨ Features
 
 ### 👨‍🎓 Student Dashboard
-| Feature | Description |
-|---|---|
-| Book Catalog | Browse and search the full book inventory |
-| Borrow & Return | Request books and track borrow history |
-| Activity Log | View personal borrowing and activity timeline |
-| Digital Library | Access and download digital documents |
-| Seat Availability | Check real-time library seat status |
-| Notifications | Receive real-time alerts via WebSocket |
-| Profile Management | Update personal information and preferences |
+
+| Feature            | Description                                   |
+| ------------------ | --------------------------------------------- |
+| Book Catalog       | Browse and search the full book inventory     |
+| Borrow & Return    | Request books and track borrow history        |
+| Activity Log       | View personal borrowing and activity timeline |
+| Digital Library    | Access and download digital documents         |
+| Seat Availability  | Check real-time library seat status           |
+| Notifications      | Receive real-time alerts via WebSocket        |
+| Profile Management | Update personal information and preferences   |
 
 ### 🛠️ Admin Dashboard
-| Feature | Description |
-|---|---|
-| Book Management | Add, edit, delete, and categorize books |
-| User Management | View and manage student/admin accounts |
-| Borrow Tracking | Monitor all active and past borrow records |
-| Analytics | Visual reports on library usage and trends |
-| Form Builder | Create and manage custom submission forms |
-| Activity Logs | System-wide event and activity monitoring |
-| Email Notifications | Send automated emails via Nodemailer |
-| Google Drive Integration | Manage digital library documents |
+
+| Feature                  | Description                                |
+| ------------------------ | ------------------------------------------ |
+| Book Management          | Add, edit, delete, and categorize books    |
+| User Management          | View and manage student/admin accounts     |
+| Borrow Tracking          | Monitor all active and past borrow records |
+| Analytics                | Visual reports on library usage and trends |
+| Form Builder             | Create and manage custom submission forms  |
+| Activity Logs            | System-wide event and activity monitoring  |
+| Email Notifications      | Send automated emails via Nodemailer       |
+| Google Drive Integration | Manage digital library documents           |
 
 ### 🔧 Technical Features
+
 - JWT-based authentication with Bearer tokens
 - Real-time WebSocket updates
 - Dark mode support across all components
@@ -87,24 +91,26 @@ Key highlights:
 ## 🛠 Tech Stack
 
 ### Backend
-| Technology | Purpose |
-|---|---|
-| **Node.js** | Runtime environment |
-| **Express.js** | Web framework & REST API |
-| **JWT** | Stateless authentication |
-| **Nodemailer** | Email service |
-| **WebSocket** | Real-time notifications |
+
+| Technology           | Purpose                  |
+| -------------------- | ------------------------ |
+| **Node.js**          | Runtime environment      |
+| **Express.js**       | Web framework & REST API |
+| **JWT**              | Stateless authentication |
+| **Nodemailer**       | Email service            |
+| **WebSocket**        | Real-time notifications  |
 | **Google Drive API** | Digital document storage |
 
 ### Frontend
-| Technology | Purpose |
-|---|---|
-| **React.js** | UI library |
-| **Framer Motion** | Animations and transitions |
-| **Tailwind CSS** | Utility-first styling |
-| **Styled Components** | Component-level styling |
-| **React Icons** | Icon library |
-| **Axios** | HTTP client for API calls |
+
+| Technology            | Purpose                    |
+| --------------------- | -------------------------- |
+| **React.js**          | UI library                 |
+| **Framer Motion**     | Animations and transitions |
+| **Tailwind CSS**      | Utility-first styling      |
+| **Styled Components** | Component-level styling    |
+| **React Icons**       | Icon library               |
+| **Axios**             | HTTP client for API calls  |
 
 ---
 
@@ -157,12 +163,14 @@ Ensure you have the following installed on your machine:
 ### Installation
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/Narayaaana11/Matrix-Library-Management-System.git
    cd Matrix-Library-Management-System
    ```
 
 2. **Install backend dependencies:**
+
    ```bash
    cd MatrixBackendAlphaVersion
    npm install
@@ -244,12 +252,14 @@ The frontend will be running at: `http://localhost:3000`
 Use the following credentials to test the application:
 
 #### Admin Account
+
 ```
 Email: admin@matrix.com
 Password: admin123
 ```
 
 #### Student Account
+
 ```
 Email: 24m11mc176@adityauniversity.in
 Password: student123
@@ -266,42 +276,47 @@ Authorization: Bearer <your_jwt_token>
 ```
 
 ### Authentication
-| Method | Endpoint | Description |
-|---|---|---|
-| `POST` | `/api/auth/register` | Register a new user |
-| `POST` | `/api/auth/login` | Login and receive JWT token |
-| `POST` | `/api/auth/logout` | Logout the current user |
-| `GET` | `/api/auth/me` | Get current user profile |
+
+| Method | Endpoint             | Description                 |
+| ------ | -------------------- | --------------------------- |
+| `POST` | `/api/auth/register` | Register a new user         |
+| `POST` | `/api/auth/login`    | Login and receive JWT token |
+| `POST` | `/api/auth/logout`   | Logout the current user     |
+| `GET`  | `/api/auth/me`       | Get current user profile    |
 
 ### Books
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/api/books` | List all books |
-| `GET` | `/api/books/:id` | Get book details |
-| `POST` | `/api/books` | Add a new book (Admin) |
-| `PUT` | `/api/books/:id` | Update book details (Admin) |
-| `DELETE` | `/api/books/:id` | Delete a book (Admin) |
+
+| Method   | Endpoint         | Description                 |
+| -------- | ---------------- | --------------------------- |
+| `GET`    | `/api/books`     | List all books              |
+| `GET`    | `/api/books/:id` | Get book details            |
+| `POST`   | `/api/books`     | Add a new book (Admin)      |
+| `PUT`    | `/api/books/:id` | Update book details (Admin) |
+| `DELETE` | `/api/books/:id` | Delete a book (Admin)       |
 
 ### Borrowing
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/api/borrows` | List all borrow records (Admin) |
-| `GET` | `/api/borrows/my` | Get current user's borrow history |
-| `POST` | `/api/borrows` | Borrow a book |
-| `PUT` | `/api/borrows/:id/return` | Return a borrowed book |
+
+| Method | Endpoint                  | Description                       |
+| ------ | ------------------------- | --------------------------------- |
+| `GET`  | `/api/borrows`            | List all borrow records (Admin)   |
+| `GET`  | `/api/borrows/my`         | Get current user's borrow history |
+| `POST` | `/api/borrows`            | Borrow a book                     |
+| `PUT`  | `/api/borrows/:id/return` | Return a borrowed book            |
 
 ### Digital Library
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/api/digital-library` | List all digital documents |
-| `GET` | `/api/digital-library/:id/download` | Download a document |
-| `POST` | `/api/digital-library` | Upload a document (Admin) |
+
+| Method | Endpoint                            | Description                |
+| ------ | ----------------------------------- | -------------------------- |
+| `GET`  | `/api/digital-library`              | List all digital documents |
+| `GET`  | `/api/digital-library/:id/download` | Download a document        |
+| `POST` | `/api/digital-library`              | Upload a document (Admin)  |
 
 ### Activity & Seats
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/api/activity` | Get activity logs |
-| `GET` | `/api/seats` | Get seat availability |
+
+| Method | Endpoint        | Description           |
+| ------ | --------------- | --------------------- |
+| `GET`  | `/api/activity` | Get activity logs     |
+| `GET`  | `/api/seats`    | Get seat availability |
 
 > **Note:** This is a high-level overview. Refer to the route files in `MatrixBackendAlphaVersion/src/routes/` for the complete and up-to-date API documentation.
 
@@ -310,6 +325,7 @@ Authorization: Bearer <your_jwt_token>
 ## 💡 Usage
 
 ### As a Student
+
 1. Register or log in with your student credentials
 2. Browse the **Book Catalog** to search and filter available books
 3. Request to borrow a book and track its due date in **My Borrows**
@@ -318,6 +334,7 @@ Authorization: Bearer <your_jwt_token>
 6. View your **Activity Log** for a complete history
 
 ### As an Admin
+
 1. Log in with admin credentials
 2. Manage the book inventory from the **Books** section
 3. Monitor all active borrows and overdue returns
@@ -347,6 +364,7 @@ Contributions are welcome and appreciated! Here's how you can help:
 5. **Open** a Pull Request describing your changes
 
 ### Contribution Guidelines
+
 - Follow the existing code style and conventions
 - Write clear, descriptive commit messages (we recommend [Conventional Commits](https://www.conventionalcommits.org/))
 - Update documentation if you add new features or change existing behavior
@@ -354,7 +372,9 @@ Contributions are welcome and appreciated! Here's how you can help:
 - Be respectful and constructive in all discussions
 
 ### Reporting Issues
+
 Found a bug or have a feature request? Please [open an issue](https://github.com/Narayaaana11/Matrix-Library-Management-System/issues) and include:
+
 - A clear description of the problem or feature
 - Steps to reproduce (for bugs)
 - Expected vs. actual behavior
