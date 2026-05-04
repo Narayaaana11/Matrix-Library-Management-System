@@ -239,6 +239,22 @@ The frontend will be running at: `http://localhost:3000`
 
 > **Tip:** You can also use tools like [concurrently](https://www.npmjs.com/package/concurrently) to run both servers simultaneously.
 
+### Test Credentials
+
+Use the following credentials to test the application:
+
+#### Admin Account
+```
+Email: admin@matrix.com
+Password: admin123
+```
+
+#### Student Account
+```
+Email: 24m11mc176@adityauniversity.in
+Password: student123
+```
+
 ---
 
 ## 📡 API Overview
